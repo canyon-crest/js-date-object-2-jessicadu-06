@@ -16,7 +16,8 @@
 // element with ID "warmUpDate".
 
 // STEP 1: Create a new Date object using: let now = new Date();
-let now = new Date().getDay;
+let now = new Date();
+let dayNumber = now.getDay();
 // STEP 2: Use .getDay() to get the day of the week as a number.
 //         Sunday = 0, Monday = 1, Tuesday = 2, ... Saturday = 6
 
@@ -93,7 +94,7 @@ let timerId = setInterval(function(){
 let running = true;
 // STEP 14: Add a click event listener to the button (ID "myBtn").
 //          Inside the listener:
-document.addEventListener('click',function(){
+document.getElementById("myBtn").addEventListener('click',function(){
     if (running === true) {
         clearInterval(timerId);
         document.getElementById("myBtn").innerHTML = "Start";
@@ -102,7 +103,7 @@ document.addEventListener('click',function(){
     else {
         startTime = new Date().getTime();
         timerId = setInterval(function(){
-            let currentTime = new Date().getTime;
+            let currentTime = new Date().getTime();
             let elaspedSeconds = (currentTime-startTime)/1000;
             document.getElementById('myTimer').innerHTML = elaspedSeconds.toFixed(3);
         },10);
